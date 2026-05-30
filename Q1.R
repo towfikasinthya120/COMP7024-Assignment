@@ -48,3 +48,22 @@ q1_summary <- q1_data %>%
   )
 
 q1_summary
+
+#Add table and charts
+kable(q1_summary, caption = "Player Engagement Statistics by Experience Level")
+
+ggplot(q1_summary, aes(x = experience_level, y = avg_play_time_player)) +
+  geom_col() +
+  labs(
+    title = "Average Play Time per Player",
+    x = "Experience Level",
+    y = "Average Play Time per Player"
+  )
+
+ggplot(q1_summary, aes(x = experience_level, y = avg_score)) +
+  geom_col() +
+  labs(
+    title = "Average Score by Experience Level",
+    x = "Experience Level",
+    y = "Average Score"
+  )
