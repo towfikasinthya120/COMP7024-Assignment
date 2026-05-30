@@ -53,3 +53,8 @@ ggplot(q2_summary, aes(x = unique_players, y = total_play_time)) +
     x = "Number of Unique Players",
     y = "Total Play Time"
   )
+
+# Display table
+kable(q2_summary,
+      digits = 2,
+      caption = "Genre-Level Behaviour and Score Efficiency")
