@@ -58,3 +58,23 @@ ggplot(q2_summary, aes(x = unique_players, y = total_play_time)) +
 kable(q2_summary,
       digits = 2,
       caption = "Genre-Level Behaviour and Score Efficiency")
+
+#Visualisation of Score efficiency visualistion
+ggplot(q2_summary, aes(x = genre, y = score_efficiency)) +
+  geom_col() +
+  labs(
+    title = "Score Efficiency by Genre",
+    x = "Genre",
+    y = "Score per Minute"
+  )
+#Visualisation of Relationship between number of players and total play time
+ggplot(q2_summary, aes(x = unique_players, y = total_play_time)) +
+  geom_point(size = 3) +
+  geom_text(aes(label = genre), vjust = -0.5) +
+  labs(
+    title = "Relationship Between Number of Players and Total Play Time",
+    x = "Number of Unique Players",
+    y = "Total Play Time"
+  )
+
+
