@@ -47,5 +47,34 @@ table(players$age_group)
 # Verify merged dataset
 head(q4_data)
 
+#Visualisation 1
 # Verify summary table
 q4_summary
+
+ggplot(
+  q4_summary,
+  aes(
+    x = age_group,
+    y = avg_play_time
+  )
+) +
+  geom_col() +
+  labs(
+    title = "Average Play Time by Age Group",
+    x = "Age Group",
+    y = "Average Play Time"
+  )
+#visualisation 2
+ggplot(
+  q4_summary,
+  aes(
+    x = age_group,
+    y = avg_score
+  )
+) +
+  geom_col() +
+  labs(
+    title = "Average Score by Age Group",
+    x = "Age Group",
+    y = "Average Score"
+  )
