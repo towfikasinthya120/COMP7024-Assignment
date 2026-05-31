@@ -27,3 +27,16 @@ q4_data <- left_join(
 )
 
 head(q4_data)
+
+#Creating Summary Statistics
+q4_summary <- q4_data %>%
+  group_by(age_group) %>%
+  summarise(
+    unique_players = n_distinct(player_id),
+    total_sessions = n(),
+    avg_play_time = mean(play_time_minutes),
+    avg_score = mean(score)
+  )
+
+q4_summary
+
