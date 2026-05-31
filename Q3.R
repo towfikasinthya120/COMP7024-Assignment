@@ -69,3 +69,21 @@ ggplot(
     x = "Total Play Time",
     y = "Average Score"
   )
+
+#Summary table
+q3_summary <- high_value_players %>%
+  summarise(
+    number_of_high_value_players = n(),
+    avg_total_play_time = mean(total_play_time),
+    avg_score = mean(avg_score),
+    avg_sessions = mean(total_sessions),
+    avg_unique_games = mean(unique_games_played)
+  )
+
+q3_summary
+
+kable(
+  q3_summary,
+  digits = 2,
+  caption = "Summary Statistics of High-Value Players"
+)
