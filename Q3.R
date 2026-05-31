@@ -21,3 +21,25 @@ player_stats <- sessions %>%
   )
 
 head(player_stats)
+
+#Define high-value criteria
+playtime_threshold <- quantile(
+  player_stats$total_play_time,
+  0.75
+)
+
+score_threshold <- mean(
+  player_stats$avg_score
+)
+
+playtime_threshold
+score_threshold
+
+#Identify high-value players
+high_value_players <- player_stats %>%
+  filter(
+    total_play_time > playtime_threshold &
+      avg_score > score_threshold
+  )
+
+head(high_value_players)
