@@ -54,3 +54,18 @@ ggplot(
     title = "Score Distribution of High-Value Players",
     y = "Average Score"
   )
+
+#visualisation 2
+ggplot(
+  high_value_players,
+  aes(
+    x = total_play_time,
+    y = avg_score
+  )
+) +
+  geom_point() +
+  labs(
+    title = "Relationship Between Play Time and Score",
+    x = "Total Play Time",
+    y = "Average Score"
+  )
