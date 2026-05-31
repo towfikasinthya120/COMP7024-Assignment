@@ -19,7 +19,7 @@ players$age_group <- cut(
 # Check age groups
 table(players$age_group)
 
-#Merge datasets
+#Merge Datasets
 q4_data <- left_join(
   sessions,
   players,
@@ -27,4 +27,3 @@ q4_data <- left_join(
 )
 
 head(q4_data)
-
