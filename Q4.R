@@ -40,3 +40,12 @@ q4_summary <- q4_data %>%
 
 q4_summary
 
+#Testing code
+# Verify age groups
+table(players$age_group)
+
+# Verify merged dataset
+head(q4_data)
+
+# Verify summary table
+q4_summary
