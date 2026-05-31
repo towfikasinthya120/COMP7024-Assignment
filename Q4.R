@@ -8,3 +8,23 @@ sessions <- read.csv("sessions.csv")
 
 head(players) 
 head(sessions) 
+
+#Creating Age groups
+players$age_group <- cut(
+  players$age,
+  breaks = c(17, 24, 34, 44, Inf),
+  labels = c("18-24", "25-34", "35-44", "45+")
+)
+
+# Check age groups
+table(players$age_group)
+
+#Merge datasets
+q4_data <- left_join(
+  sessions,
+  players,
+  by = "player_id"
+)
+
+head(q4_data)
+
