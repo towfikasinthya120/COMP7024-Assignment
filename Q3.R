@@ -43,3 +43,14 @@ high_value_players <- player_stats %>%
   )
 
 head(high_value_players)
+
+#visualisation 1
+ggplot(
+  high_value_players,
+  aes(y = avg_score)
+) +
+  geom_boxplot() +
+  labs(
+    title = "Score Distribution of High-Value Players",
+    y = "Average Score"
+  )
